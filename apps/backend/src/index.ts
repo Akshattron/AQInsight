@@ -56,6 +56,10 @@ app.use("/auth", OauthRouter);
 app.use('/api/community', communityRouter);
 app.use("/api/chat" , chatRouter)
 
+app.get("/" , (req , res) => {
+    res.send("AQInsight Backend is UP!!");
+})
+
 app.listen(PORT, () => {
     console.log(`Node.js API Gateway listening on port ${PORT}`);
     console.log(`Forwarding forecast requests to: ${FORECAST_SERVICE_URL}`);
